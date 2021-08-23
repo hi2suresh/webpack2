@@ -1,4 +1,9 @@
-import sum from './sum';
-import './image_viewer';
+const button = document.createElement('button');
+button.innerText = 'Click Me!';
+button.onclick = () => {
+    System.import('./image_viewer.js').then(module => {
+        module.default();
+    })
+}
 
-console.log(sum(2,3));
+document.body.appendChild(button);
